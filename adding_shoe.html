@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Add Shoe</h1>
+  <form method="POST" action="{{ url_for('add_shoe') }}">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="image_url">Image URL:</label>
+      <input type="text" class="form-control" id="image_url" name="image_url" required>
+    </div>
+    <div class="form-group">
+      <label for="price">Price:</label>
+      <input type="number" class="form-control
+{% endblock %}
