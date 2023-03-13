@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS shoes;
+
+CREATE TABLE shoes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL ,
+    image TEXT NOT NULL ,
+    price TEXT NOT NULL
+);

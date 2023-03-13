@@ -1,17 +1,22 @@
-{% extends "base.html" %}
-
+{% extends 'base.html' %}
 {% block content %}
-  <h1>Add Shoe</h1>
-  <form method="POST" action="{{ url_for('add_shoe') }}">
-    <div class="form-group">
-      <label for="name">Name:</label>
-      <input type="text" class="form-control" id="name" name="name" required>
-    </div>
-    <div class="form-group">
-      <label for="image_url">Image URL:</label>
-      <input type="text" class="form-control" id="image_url" name="image_url" required>
-    </div>
-    <div class="form-group">
-      <label for="price">Price:</label>
-      <input type="number" class="form-control
+     <h>{% block title %}ADD NEW SHOES{% endblock %}</h>
+<form method="post">
+  <div class="mb-3 mt-3">
+
+    <label for="Image" class="form-label">Shoe image URL:</label>
+    <input type="name" name ="image" class="form-control" placeholder="Place image URL" id="image" value="{{ request.form['image'] }}">
+  </div>
+    <div class="mb-3">
+     <label for="name" class="form-label">Shoe name:</label>
+    <input type="text" name="name" class="form-control" id="name" placeholder="Enter name" value="{{ request.form['name'] }}">
+  </div>
+    <div class="mb-3">
+    <label for="number" class="form-check-label">Price:</label>
+      <input class="form-control" type="text" name="price"  id="number" placeholder="Enter price" value="{{ request.form['price'] }}">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
 {% endblock %}

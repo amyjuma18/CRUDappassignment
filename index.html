@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{% block title %}LANDING PAGE{% endblock %}</h1>
+
+    {#          my loop should create same interface for my different posts #}
+    {% for x in shoes %}
+        {#          my loop should create same interface for my different posts #}
+        <div class="shoes">
+
+            <p>{{ x['name'] }}</p>
+            <p>{{ x['image'] }}</p>
+            <p>{{ x['price'] }}</p>
+            {#            <#}
+            {#            edit button#}
+        <a href="{{ url_for("edit", id=x["id"])  }}">Edit shoe</a>
+            <br>
+        <a href="{{ url_for("delete", id=x["id"])  }}">delete shoe</a>
+        </div>
+    {% endfor %}
+
+{% endblock %}
